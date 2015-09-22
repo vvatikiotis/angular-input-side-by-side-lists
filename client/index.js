@@ -1,4 +1,4 @@
-(function(angular) {
+(function (angular) {
     "use strict";
     var resinApp = angular.module("resinApp", []);
 
@@ -11,7 +11,8 @@
         $scope.createEntry = function() {
             console.dir($scope.entry.text);
 
-            $scope.leftList.push($scope.entry.text);
+            if ($scope.entry.text)
+                $scope.leftList.push($scope.entry.text);
         };
 
         $scope.moveItemRight = function(idx) {
