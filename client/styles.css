@@ -1,0 +1,10 @@
+.item {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+.item:hover .action-button {
+    visibility: visible !important;
+}
+.action-button {
+    visibility: hidden;
+}

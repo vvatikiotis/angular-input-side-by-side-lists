@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <title>Resin list</title>
+
+    <script src="https://code.angularjs.org/1.4.6/angular.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="index.js"></script>
+
+</head>
+
+<body ng-app="resinApp">
+
+    <div ng-controller="ListsController">
+        <form ng-submit="createEntry()">
+            <input type=text ng-model="entry.text" placeholder="new entry">
+            <button type="submit">Create</button>
+        </form>
+
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Left</div>
+                    <div class="panel-body">
+                        <div ng-repeat="item in leftList track by $index">
+                            <div class="item">
+                                {{item}}
+                                <span class="action-button" ng-click="moveItemRight($index)">&#x29C1;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Right</div>
+                    <div class="panel-body">
+                        <div ng-repeat="entry in rightList track by $index">
+                            <div class="item">
+                                {{item}}
+                                <span class="action-button" ng-click="moveItemLeft($index)">&#x29C0;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
